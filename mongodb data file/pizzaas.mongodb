@@ -1,0 +1,24 @@
+// Insert a few documents into the sales collection.
+db.pizzas.insertMany([
+    {'_id':1, 'name': 'Sicilian Pizza',     'varients':['small','medium','large'],   'prices': [{ 'small':200, 'medium':300, 'large':550, }],  'baseType':  ['Thin' , 'Crust'] ,  'toppings':[ 'pepperoni','mushroom','extrachesse'], 'chessetypes':['mozerella','parmesan','goatcheese','cheddar'],  'image': 'https://tse3.mm.bing.net/th?id=OIP.XxKsPnOEebtEVY_M3GGefwHaE8&pid=Api&P=0' },
+    {'_id':2, 'name': 'Calzone Pizza',      'varients':['small','medium','large'],   'prices': [{ 'small':240, 'medium':520, 'large':700, }],  'baseType':  ['Thin' , 'Crust'] ,  'toppings':[ 'pepperoni','mushroom','extrachesse'], 'chessetypes':['mozerella','parmesan','goatcheese','cheddar'],  'image': 'https://tse1.mm.bing.net/th?id=OIP.Sc5ihl792VF1J5R6U43BSgHaE8&pid=Api&P=0' },  
+    {'_id':3, 'name': 'Neanpolitan Pizza',  'varients':['small','medium','large'],   'prices': [{ 'small':220, 'medium':320, 'large':550, }],  'baseType':  ['Thin' , 'Crust'] ,  'toppings':[ 'pepperoni','mushroom','extrachesse'], 'chessetypes':['mozerella','parmesan','goatcheese','cheddar'],  'image': 'https://tse2.mm.bing.net/th?id=OIP.ngyqhigAn1u1JdHglgT9qQHaF8&pid=Api&P=0' }, 
+    {'_id':4, 'name': 'Pepperoni Pizza',    'varients':['small','medium','large'],   'prices': [{ 'small':260, 'medium':340, 'large':520, }],  'baseType':  ['Thin' , 'Crust'] ,  'toppings':[ 'pepperoni','mushroom','extrachesse'], 'chessetypes':['mozerella','parmesan','goatcheese','cheddar'],  'image': 'https://tse4.mm.bing.net/th?id=OIP._Tuj6ElUF8jhhcSg41_V_QHaE8&pid=Api&P=0' },  
+    {'_id':5, 'name': 'White Pizza',        'varients':['small','medium','large'],   'prices': [{ 'small':270, 'medium':310, 'large':450, }],  'baseType':  ['Thin' , 'Crust'] ,  'toppings':[ 'pepperoni','mushroom','extrachesse'], 'chessetypes':['mozerella','parmesan','goatcheese','cheddar'],  'image': 'https://tse2.mm.bing.net/th?id=OIP.OG1AM5WsXfGeABICQvdIswHaE6&pid=Api&P=0' }, 
+    {'_id':6, 'name': 'Stromboli Pizza',    'varients':['small','medium','large'],   'prices': [{ 'small':150, 'medium':240, 'large':400, }],  'baseType':  ['Thin' , 'Crust'] ,  'toppings':[ 'pepperoni','mushroom','extrachesse'], 'chessetypes':['mozerella','parmesan','goatcheese','cheddar'],  'image': 'https://tse2.mm.bing.net/th?id=OIP.AoMffl2sIyeTpdhGJqm15gHaE8&pid=Api&P=0' },  
+    {'_id':7, 'name': 'Pan Pizza',          'varients':['small','medium','large'],   'prices': [{ 'small':240, 'medium':320, 'large':550, }],  'baseType':  ['Thin' , 'Crust'] ,  'toppings':[ 'pepperoni','mushroom','extrachesse'], 'chessetypes':['mozerella','parmesan','goatcheese','cheddar'],  'image': 'https://tse3.mm.bing.net/th?id=OIP.-oEQaNqSOFsUgf9zBHInhgHaE2&pid=Api&P=0' }
+]) 
+
+// Run a find command to view items sold on April 4th, 2014.
+db.sales.find({ date: { $gte: new Date('2014-04-04'), $lt: new Date('2014-04-05') } });
+
+// Build an aggregation to view total sales for each product in 2014.
+const aggregation = [
+  { $match: { date: { $gte: new Date('2014-01-01'), $lt: new Date('2015-01-01') } } },
+  { $group: { _id: '$item', totalSaleAmount: { $sum: { $multiply: [ '$price', '$quantity' ] } } } }
+];
+
+// Run the aggregation and open a cursor to the results.
+// Use toArray() to exhaust the cursor to return the whole result set.
+// You can use hasNext()/next() to iterate through the cursor page by page.
+db.sales.aggregate(aggregation);

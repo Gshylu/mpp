@@ -1,0 +1,208 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-top:10px;
+  padding-bottom:10px;
+  padding: 10;
+  overflow: hidden;
+
+  background-image:url('//tse4.mm.bing.net/th?id=OIP.sSlUcRPYt2tavq_Fp-9t4wHaF7&pid=Api&P=0')
+}
+
+
+li {
+  float: left;
+  font-size:20px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color:rgb(236, 244, 246);
+  border-radius: 10px;
+}
+
+
+ 
+
+.divss{ 
+ display:flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: space-around;
+ position: absolute;
+ left:10%;
+ right:10%;
+ padding:50px;
+ 
+}
+
+
+
+.form3{
+
+  position:absolute;
+  border-radius: 20px;
+  top:0px;
+  left:0px;
+  right:0px;
+  bottom:0px;
+  margin:auto;
+  padding-left:90px;
+  padding-right:130px;
+  padding-top:70px;
+  padding-bottom: 130px;
+ 
+  width:800px;
+  font-weight: 500;
+  
+}
+
+
+.div3{
+
+  position:absolute;
+  color:black;
+  border-radius: 20px;
+  top:100px;
+  left:0px;
+  right:0px;
+  bottom:0px;
+  margin:auto;
+  height:400px;
+  width:400px;
+  background-image:url('//tse4.mm.bing.net/th?id=OIP.sSlUcRPYt2tavq_Fp-9t4wHaF7&pid=Api&P=0')
+}
+
+
+
+.btn1{
+
+  background-color: black;
+  padding:5px;
+  border-radius:5px;
+  color:white;
+  position:absolute;
+  left:15%;
+  width:100px;
+
+}
+
+input{
+  border:0px;
+  padding:5px;
+}
+
+select{
+  border:0px;
+  padding:5px;
+}
+
+
+
+.table1, .tr1, .td1 ,.th1{
+  border:1px solid black;
+  padding:5px;
+  border-collapse: collapse;
+
+ 
+}
+.table{
+  width:100%;
+  position: absolute;
+  top:20%;
+  
+}
+.th1{
+ color:#f7fbf8;
+ background-image:url('//tse4.mm.bing.net/th?id=OIP.sSlUcRPYt2tavq_Fp-9t4wHaF7&pid=Api&P=0')
+
+  
+
+}
+
+.tag{
+  color: rgb(8, 192, 198);
+  font-size:4vw;
+  font-family:'Times New Roman', Times, serif;
+  display: flex;
+  justify-content: center;
+  
+  
+ 
+}
+
+.tag1{
+  display: flex;
+  justify-content: center;
+  font-size:3vw;
+  font-family:'Times New Roman', Times, serif;
+  color:blue
+}
+
+.tag2{
+  display: flex;
+  justify-content: center;
+  font-size:2vw;
+  font-family:'Times New Roman', Times, serif;
+  color:rgb(227, 96, 31)
+}
+
+
+
+.tb2{
+  
+  background-color:#f7fbf8 ;
+  padding:5px;
+ box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+/*  box-shadow: 60px -16px teal;*/
+}
+
+
+.img1{
+  border-radius:30px;
+ 
+}
+
+.table2{
+ 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+  margin:auto;
+  border-top:100px;
+
+}
+
+.cardbody{
+  padding:10px;
+}
+
+
+.form-control {
+  border:0px;
+  padding:10px;
+  width:250px
+
+}
+
+.selection{
+  width:10%;
+}
+
+.ordernow{
+
+  padding:10px;
+  border:0px;
+  border-radius: 10px;
+  background-image:url('//tse4.mm.bing.net/th?id=OIP.sSlUcRPYt2tavq_Fp-9t4wHaF7&pid=Api&P=0')
+}
+
+
